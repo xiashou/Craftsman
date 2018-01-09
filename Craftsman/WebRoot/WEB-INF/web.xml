@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Craftsman</display-name>
+
+	<!-- 启动sping容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 调整hibernate session(Open Session in View) -->
+	<filter>
+		<filter-name>openSessionInView</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>sessionFactory</param-value>
+		</init-param>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>flushMode</param-name>
+			<param-value>AUTO</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>openSessionInView</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 指定上下文位置 default: /WEB-INF/spring.xml -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring.xml</param-value>
+	</context-param>
+
+	<!-- 引入struts2 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 微信接入接口  -->
+	<filter>
+	    <filter-name>WeixinFilter</filter-name>
+	    <filter-class>org.weixin4j.WeixinThirdUrlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>WeixinFilter</filter-name>
+	    <url-pattern>/wechat/wechatService</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>GlobalServlet</servlet-name>
+		<servlet-class>com.tcode.common.servlet.GlobalServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<!-- This is the loadOnStartupServlet in order to launch jcrontab with the application server -->
+	<servlet>
+		<servlet-name>LoadOnStartupServlet</servlet-name>
+		<servlet-class>com.tcode.common.jcrontab.web.LoadCrontabServlet</servlet-class>
+		<!-- can overwrite the parameters from jcrontab.properties 
+		<init-param> 
+			<param-name>PROPERTIES_FILE</param-name> 
+			<param-value>E:/jcrontab.properties</param-value> 
+		</init-param> -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- Mapping of the StartUp Servlet -->
+	<servlet-mapping>
+		<servlet-name>LoadOnStartupServlet</servlet-name>
+		<url-pattern>/Startup</url-pattern>
+	</servlet-mapping>  
+
+	<session-config>
+		<session-timeout>0</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

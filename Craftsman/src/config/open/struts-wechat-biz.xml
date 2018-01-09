@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 微信业务（需鉴权） -->
+    <package name="wechatBizAuth" namespace="/open/wechat/biz/auth" extends="summer-struts">
+        
+    	<!-- 个人中心 -->
+        <action name="initCenter" class="CenterAction" method="initCenter" >
+        	<result name="success">/wct/center/index.jsp</result>
+        </action>
+        
+        <action name="*Center*" class="CenterAction" method="{1}Center{2}" >
+        	<result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">orderItemList.*, orderHeadList.*, memberStockList.*, memberCarList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 活动信息 -->
+        <action name="*WechatActivityLottery*" class="OpenWechatActivityLotteryAction" method="{1}WechatActivityLottery{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">prizeLevel, wechatActivityLotteryList.*,wechatActivityLotteryItemList.*,wechatActivityLotteryPartList.*, success, msg</param>
+            </result>
+            <!--大转盘  -->
+            <result name="success1">/wct/games/turntable2/index.jsp</result>
+            <result name="-1">/wct/games/turntable2/index2.jsp</result>
+        </action>
+        
+        <!--参与人员  -->
+        <action name="*WechatActivityPartLottery*" class="OpenWechatActivityLotteryPartAction" method="{1}WechatActivityPartLottery{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatActivityLotteryPartList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!--门店联系信息  -->
+        <action name="*Contact*" class="ContactAction" method="{1}Contact{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">settingInfo.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 紧急救援 -->
+        	<!-- 初始化紧急救援页面 -->
+        <action name="initSOS" class="WechatSOSAction" method="initSOS" >
+        	<result name="success">/wct/rescue.jsp</result>
+        </action>
+        <action name="*SOS*" class="WechatSOSAction" method="{1}SOS{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">deptList.*, success, msg</param>
+            </result>
+        </action>
+        
+        
+        <!-- 商城 -->
+        <action name="initMallIndex" class="mallWebAction" method="initMallIndex">
+            <result>/wct/mart/index.jsp</result>
+        </action>
+        <action name="initMallCart" class="mallCartAction" method="queryMallCartByMemId">
+            <result>/wct/mart/cart.jsp</result>
+        </action>
+        <action name="initMallCategory" class="mallWebAction" method="initMallCategory">
+            <result>/wct/mart/category.jsp</result>
+        </action>
+        <action name="initMallGoodsDetail" class="mallWebAction" method="initMallGoodsDetail">
+            <result>/wct/mart/detail.jsp</result>
+        </action>
+        <action name="initMallCenter" class="mallWebAction" method="initMallCenter">
+            <result>/wct/mart/center.jsp</result>
+        </action>
+        <action name="initMallOrders" class="mallWebAction" method="initMallOrders">
+            <result>/wct/mart/orders.jsp</result>
+        </action>
+        
+        
+        <!-- 报名活动 -->
+        <action name="initActSignupList" class="actSignupWebAction" method="initActSignupList">
+            <result>/wct/activity/signup/list.jsp</result>
+        </action>
+        <action name="initActSignupDetail" class="actSignupWebAction" method="initActSignupDetail">
+            <result>/wct/activity/signup/detail.jsp</result>
+        </action>
+        
+        <!-- 预约 -->
+        <action name="initMemberBook" class="memberBookAction" method="initMemberBook">
+            <result name="success">/wct/center/book.jsp</result>
+        </action>
+        
+    </package>
+    
+    
+    
+</struts>

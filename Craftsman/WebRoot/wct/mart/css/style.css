@@ -1,0 +1,27 @@
+* {margin: 0; padding: 0}
+body {
+	font: 14px/1.7 arial, "Microsoft Yahei", sans-serif;
+}
+
+.page, .page-group {
+	position: fixed;
+}
+
+a {
+	color: #3d4145;
+}
+
+.tsm-head .tsm-title {
+	float: left;
+    width: 90%;
+    height: 100%;
+    padding-left: 40px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.tsm-head .icon-right {
+	float: right;
+    line-height: 45px;
+    padding-right: 10px;
+}

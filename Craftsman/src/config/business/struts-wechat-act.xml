@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <package name="activity" namespace="/wechat/act" extends="summer-struts">
+    
+        <!-- 微信抽奖活动 -->
+        <action name="initWechatActivityLottery">
+            <result name="success">/mgr/business/wechat/act/wechatActivityLotteryManage.jsp</result>
+        </action>
+        
+        <action name="*WechatActivityLottery*" class="WechatActivityLotteryAction" method="{1}WechatActivityLottery{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatActivityLotteryList.*,wechatActivityLotteryItemList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 活动参与次数 -->
+        <action name="initWechatActivityNum">
+            <result name="success">/mgr/business/wechat/act/wechatActivityNumManage.jsp</result>
+        </action>
+        
+        <action name="*WechatActivityNum*" class="WechatActivityNumAction" method="{1}WechatActivityNum{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatActivityNumList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 微信报名活动 -->
+        <action name="initSignupManage">
+            <result name="success">/mgr/business/wechat/act/signupManage.jsp</result>
+        </action>
+        <action name="initSignupJoiner">
+            <result name="success">/mgr/business/wechat/act/signupJoiner.jsp</result>
+        </action>
+        <action name="initSignupStatement">
+            <result name="success">/mgr/business/wechat/act/signupStatement.jsp</result>
+        </action>
+        <action name="initSignupBanner">
+            <result name="success">/mgr/business/wechat/act/signupBanner.jsp</result>
+        </action>
+        <action name="queryActSettingByAppId" class="actSettingAction" method="queryActSettingByAppId">
+            <result type="json">
+            	<param name="root">setting</param>
+            </result>
+        </action>
+        <action name="*ActSignup*" class="actSignupAction" method="{1}ActSignup{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">signupList.*, success, msg, uploadFileName</param>
+            </result>
+        </action>
+        <action name="*ActSpec*" class="actSpecAction" method="{1}ActSpec{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">specList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryActStatementByAppId" class="actStatementAction" method="queryActStatementByAppId">
+            <result type="json">
+            	<param name="root">statement</param>
+            </result>
+        </action>
+        <action name="*ActStatement*" class="actStatementAction" method="{1}ActStatement{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        <action name="*ActJoiner*" class="actJoinerAction" method="{1}ActJoiner{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">joinerList.*, success, msg, totalCount</param>
+            </result>
+        </action>
+        <action name="*ActBanner*" class="actBannerAction" method="{1}ActBanner{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">bannerList.*, success, msg, totalCount</param>
+            </result>
+        </action>
+        
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 财务 -->
+    <package name="fico" namespace="/fico" extends="summer-struts">
+    
+	    <!-- 资产管理 -->
+	    <action name="initAssets">
+            <result name="success">/mgr/business/fico/assetsManage.jsp</result>
+        </action>
+        <action name="*Assets*" class="assetsAction" method="{1}Assets{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">assetsList.*, success, msg</param>
+            </result>
+        </action>
+        
+	    <!-- 应收管理 -->
+	    <action name="initReceivable">
+            <result name="success">/mgr/business/fico/receivableManage.jsp</result>
+        </action>
+        <action name="*Receivable*" class="receivableAction" method="{1}Receivable{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">rList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <action name="*Repayment*" class="repaymentAction" method="{1}Repayment{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">repayList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+	    <!-- 应付管理 -->
+	    <action name="initPayable">
+            <result name="success">/mgr/business/fico/payableManage.jsp</result>
+        </action>
+        <action name="*Payable*" class="payableAction" method="{1}Payable{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">payableList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+	    <!-- 资金支出 -->
+	    <action name="initExpenditure">
+            <result name="success">/mgr/business/fico/expenditureManage.jsp</result>
+        </action>
+        <action name="*Expenditure*" class="expenditureAction" method="{1}Expenditure{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">expendList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <!-- 支出类型 -->
+	    <action name="initExptype">
+            <result name="success">/mgr/business/fico/exptypeManage.jsp</result>
+        </action>
+        <action name="*Exptype*" class="exptypeAction" method="{1}Exptype{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">typeList.*, success, msg</param>
+            </result>
+        </action>
+        <!-- 综合报表 -->
+	    <action name="initOverall">
+            <result name="success">/mgr/business/fico/overallReport.jsp</result>
+        </action>
+        <action name="*Overall*" class="overallAction" method="{1}Overall{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">headList.*, itemList.*, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

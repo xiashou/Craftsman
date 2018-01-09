@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 订单 -->
+    <package name="order" namespace="/order" extends="summer-struts">
+    
+	    <!-- 普通订单 -->
+	    <action name="initNormalOrder">
+            <result name="success">/mgr/business/order/normalOrder.jsp</result>
+        </action>
+        <action name="queryOrderHeadById" class="orderAction" method="queryOrderHeadById">
+            <result type="json">
+            	<param name="root">orderHead</param>
+            </result>
+        </action>
+        <action name="*Order*" class="orderAction" method="{1}Order{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">orderList.*, orderNo, totalCount, success, msg</param>
+            </result>
+        </action>
+        <action name="*Head*" class="orderAction" method="{1}Head{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">hList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 订单结算 -->
+	    <action name="initOrderSettlement">
+            <result name="success">/mgr/business/order/orderSettlement.jsp</result>
+        </action>
+        
+        <!-- 套餐订单 -->
+	    <action name="initPackageOrder">
+            <result name="success">/mgr/business/order/packageOrder.jsp</result>
+        </action>
+        
+        <!-- 换货订单 -->
+	    <action name="initChangeOrder">
+            <result name="success">/mgr/business/order/changeOrder.jsp</result>
+        </action>
+        
+        <!-- 退货订单 -->
+	    <action name="initReturnOrder">
+            <result name="success">/mgr/business/order/returnOrder.jsp</result>
+        </action>
+        
+        <!-- 会员充值 -->
+	    <action name="initMemberRecharge">
+            <result name="success">/mgr/business/order/memberRecharge.jsp</result>
+        </action>
+        
+        <!-- 套餐扣次 -->
+	    <action name="initDeductionOrder">
+            <result name="success">/mgr/business/order/deductionOrder.jsp</result>
+        </action>
+
+        <!-- 保险理赔 -->
+	    <action name="initInsuranceOrder">
+            <result name="success">/mgr/business/order/insuranceOrder.jsp</result>
+        </action>
+        
+        <!-- 批发订单 -->
+	    <action name="initWholesaleOrder">
+            <result name="success">/mgr/business/order/wholesaleOrder.jsp</result>
+        </action>
+        
+        <!-- 订单管理/消费记录 -->
+	    <action name="initSaleOrderManage">
+            <result name="success">/mgr/business/order/saleOrderManage.jsp</result>
+        </action>
+        
+        <!-- 订单管理/开单管理 -->
+	    <action name="initDnfOrderManage">
+            <result name="success">/mgr/business/order/dnfOrderManage.jsp</result>
+        </action>
+        
+        <!-- 订单打印 -->
+        <action name="initOrderPrint">
+            <result name="success">/mgr/business/order/initOrderPrint.jsp</result>
+        </action>
+	    <action name="OrderPrint1" class="orderAction" method="OrderPrint1">
+            <result name="success">/mgr/common/print/print1.jsp</result>
+        </action>
+        <action name="OrderPrint2" class="orderAction" method="OrderPrint2">
+            <result name="success">/mgr/common/print/print2.jsp</result>
+        </action>
+        <action name="OrderPrint3" class="orderAction" method="OrderPrint3">
+            <result name="success">/mgr/common/print/print3.jsp</result>
+        </action>
+        <action name="OrderPrint4" class="orderAction" method="OrderPrint4">
+            <result name="success">/mgr/common/print/print4.jsp</result>
+        </action>
+        
+        <!-- 订单查看 -->
+	    <action name="initOrderView">
+            <result name="success">/mgr/business/order/orderView.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

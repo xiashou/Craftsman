@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 商品 -->
+    <package name="goods" namespace="/goods" extends="summer-struts">
+    
+    	<!-- 工时商品类型 -->
+    	<action name="*HourType*" class="goodsHourTypeAction" method="{1}HourType{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">hourTypeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+    
+	    <!-- 工时商品 -->
+	    <action name="initHourGoods">
+            <result name="success">/mgr/business/goods/hourGoodsManage.jsp</result>
+        </action>
+        <action name="*GoodsHour*" class="goodsHourAction" method="{1}GoodsHour{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">hourList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 实物商品类型 -->
+    	<action name="*MaterialType*" class="goodsMaterialTypeAction" method="{1}MaterialType{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">materialTypeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 实物商品 -->
+	    <action name="initMaterialGoods">
+            <result name="success">/mgr/business/goods/materialGoodsManage.jsp</result>
+        </action>
+        <action name="*GoodsMaterial*" class="goodsMaterialAction" method="{1}GoodsMaterial{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">materialList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+         <!-- 套餐商品 -->
+	    <action name="initPackageGoods">
+            <result name="success">/mgr/business/goods/packageGoodsManage.jsp</result>
+        </action>
+        
+        <action name="*PackageGoods*" class="goodsPackageAction" method="{1}PackageGoods{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">packageList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+         <!-- 套餐详情 -->
+         <action name="*PackageDetail*" class="goodsPackageDetailAction" method="{1}PackageDetail{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">packageDetailList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <!-- 根据关键字查询商品信息(实物类/工时类) -->
+         <action name="queryGoodsByKeyword" class="goodsPackageDetailAction" method="queryGoodsByKeyword">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">goodsList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        
+        <!-- 库存 -->
+	    <action name="initGoodsStock">
+            <result name="success">/mgr/business/goods/goodsStockManage.jsp</result>
+        </action>
+        <!-- 商品库存 -->
+	    <action name="initStockGoods">
+            <result name="success">/mgr/business/goods/stockGoodsManage.jsp</result>
+        </action>
+        <action name="*GoodsStock*" class="goodsStockAction" method="{1}GoodsStock{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">stockList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 商品入库 -->
+        <action name="initInStockGoods">
+            <result name="success">/mgr/business/goods/inStockGoodsManage.jsp</result>
+        </action>
+        <action name="initInStockGoodsReport">
+            <result name="success">/mgr/business/goods/inStockGoodsReport.jsp</result>
+        </action>
+        <action name="initInStockPrint">
+            <result name="success">/mgr/business/goods/initInStockPrint.jsp</result>
+        </action>
+        <action name="InStockPrint" class="goodsInStockAction" method="InStockPrint">
+            <result name="success">/mgr/common/print/inStockPrint.jsp</result>
+        </action>
+        <action name="*GoodsInStock*" class="goodsInStockAction" method="{1}GoodsInStock{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">inStockList.*, inNumber, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        
+        <!-- 商品调拨 -->
+        <action name="initMoveOutGoods">
+            <result name="success">/mgr/business/goods/moveOutGoodsManage.jsp</result>
+        </action>
+        <action name="initMoveInGoods">
+            <result name="success">/mgr/business/goods/moveInGoodsManage.jsp</result>
+        </action>
+        <action name="initMoveGoodsReport">
+            <result name="success">/mgr/business/goods/moveGoodsReport.jsp</result>
+        </action>
+        <action name="*GoodsMove*" class="goodsMoveAction" method="{1}GoodsMove{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">moveHeadList.*, moveItemList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 商品退货 -->
+        <action name="initReinStockGoods">
+            <result name="success">/mgr/business/goods/reinStockGoodsManage.jsp</result>
+        </action>
+        <action name="reinStockGoodsReport">
+            <result name="success">/mgr/business/goods/reinStockGoodsReport.jsp</result>
+        </action>
+        
+        <!-- 商品盘点 -->
+        <action name="initCheckGoods">
+            <result name="success">/mgr/business/goods/checkGoodsManage.jsp</result>
+        </action>
+        
+        <!-- 卡券设置 -->
+        <action name="initCouponsGoods">
+            <result name="success">/mgr/business/goods/couponsGoodsManage.jsp</result>
+        </action>
+        <action name="*Coupons*" class="goodsCouponsAction" method="{1}Coupons{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">couponsList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

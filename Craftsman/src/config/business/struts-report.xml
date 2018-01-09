@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 报表 -->
+    <package name="report" namespace="/report" extends="summer-struts">
+    
+	    <!-- 会员充值记录 -->
+	    <action name="initRechargeReport">
+            <result name="success">/mgr/business/report/rechargeReport.jsp</result>
+        </action>
+        <action name="*ReptRecharge*" class="reptRechargeAction" method="{1}ReptRecharge{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">list.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 出库记录 -->
+        <action name="initOutGoodsReport">
+            <result name="success">/mgr/business/report/outGoodsReport.jsp</result>
+        </action>
+        
+        <!-- 营业流水 -->
+        <action name="initWaterOrderReport">
+            <result name="success">/mgr/business/report/waterOrderReport.jsp</result>
+        </action>
+        
+        <!-- 营业流水 -->
+        <action name="initDeleteOrderReport">
+            <result name="success">/mgr/business/report/deleteOrderReport.jsp</result>
+        </action>
+        <action name="*ReptDelete*" class="reptDeleteAction" method="{1}ReptDelete{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">deleteList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

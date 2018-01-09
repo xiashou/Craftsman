@@ -1,0 +1,612 @@
+/* Style the buyAction Components; Button and MenuItem */
+.house {
+    background-image: url(../images/icons/house.png) !important;
+	background-repeat: no-repeat !important;
+}
+.user {
+    background-image: url(../images/icons/user.png) !important;
+	background-repeat: no-repeat !important;
+}
+.add {
+    background-image: url(../images/icons/add.png) !important;
+	background-repeat: no-repeat !important;
+}
+.delete {
+    background-image: url(../images/icons/delete.png) !important;
+	background-repeat: no-repeat !important;
+}
+.arrow_rotate_anticlockwise {
+    background-image: url(../images/icons/arrow_rotate_anticlockwise.png) !important;
+	background-repeat: no-repeat !important;
+}
+.book_open {
+    background-image: url(../images/icons/book_open.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cancel{
+    background-image: url(../images/icons/cancel.png) !important;
+	background-repeat: no-repeat !important;
+}
+.accept{
+    background-image: url(../images/icons/accept.png) !important;
+	background-repeat: no-repeat !important;
+}
+.female {
+	background-image: url(../images/icons/female.png) !important;
+	background-repeat: no-repeat !important;
+}
+.male {
+	background-image: url(../images/icons/male.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cog {
+	background-image: url(../images/icons/cog.png) !important;
+	background-repeat: no-repeat !important;
+}
+.stop {
+	background-image: url(../images/icons/stop.png) !important;
+	background-repeat: no-repeat !important;
+}
+.group {
+	background-image: url(../images/icons/group.png) !important;
+	background-repeat: no-repeat !important;
+}
+.group_link {
+	background-image: url(../images/icons/group_link.png) !important;
+	background-repeat: no-repeat !important;
+}
+.group_link2 {
+	background-image: url(../images/icons/group_link2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.group_key {
+	background-image: url(../images/icons/group_key.png) !important;
+	background-repeat: no-repeat !important;
+}
+.group_key2 {
+	background-image: url(../images/icons/group_key2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.disk {
+	background-image: url(../images/icons/disk.png) !important;
+	background-repeat: no-repeat !important;
+}
+.database {
+	background-image: url(../images/icons/database.png) !important;
+	background-repeat: no-repeat !important;
+}
+.clock {
+	background-image: url(../images/icons/clock.png) !important;
+	background-repeat: no-repeat !important;
+}
+.money {
+	background-image: url(../images/icons/money.png) !important;
+	background-repeat: no-repeat !important;
+}
+.note {
+	background-image: url(../images/icons/note.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table {
+	background-image: url(../images/icons/table.png) !important;
+	background-repeat: no-repeat !important;
+}
+.layout {
+	background-image: url(../images/icons/layout.png) !important;
+	background-repeat: no-repeat !important;
+}
+.chart_organisation {
+	background-image: url(../images/icons/chart_organisation.png) !important;
+	background-repeat: no-repeat !important;
+}
+.pencil {
+	background-image: url(../images/icons/pencil.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tab {
+	background-image: url(../images/icons/tab.png) !important;
+	background-repeat: no-repeat !important;
+}
+.brick {
+	background-image: url(../images/icons/brick.png) !important;
+	background-repeat: no-repeat !important;
+}
+.folder_brick {
+	background-image: url(../images/icons/folder_brick.png) !important;
+	background-repeat: no-repeat !important;
+}
+.map {
+	background-image: url(../images/icons/map.png) !important;
+	background-repeat: no-repeat !important;
+}
+.application_side_tree {
+	background-image: url(../images/icons/application_side_tree.png) !important;
+	background-repeat: no-repeat !important;
+}
+.folder_user {
+	background-image: url(../images/icons/folder_user.png) !important;
+	background-repeat: no-repeat !important;
+}
+.edit2 {
+	background-image: url(../images/icons/edit2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.database_gear {
+	background-image: url(../images/icons/database_gear.png) !important;
+	background-repeat: no-repeat !important;
+}
+.database {
+	background-image: url(../images/icons/database.png) !important;
+	background-repeat: no-repeat !important;
+}
+.award_star_bronze_1 {
+	background-image: url(../images/icons/award_star_bronze_1.png) !important;
+	background-repeat: no-repeat !important;
+}
+.zoom {
+	background-image: url(../images/icons/zoom.png) !important;
+	background-repeat: no-repeat !important;
+}
+.application_view_tile {
+	background-image: url(../images/icons/application_view_tile.png) !important;
+	background-repeat: no-repeat !important;
+}
+.package {
+	background-image: url(../images/icons/package.png) !important;
+	background-repeat: no-repeat !important;
+}
+.package_add {
+	background-image: url(../images/icons/package_add.png) !important;
+	background-repeat: no-repeat !important;
+}
+.package_green {
+	background-image: url(../images/icons/package_green.png) !important;
+	background-repeat: no-repeat !important;
+}
+.bricks {
+	background-image: url(../images/icons/bricks.png) !important;
+	background-repeat: no-repeat !important;
+}
+.money_dollar {
+	background-image: url(../images/icons/money_dollar.png) !important;
+	background-repeat: no-repeat !important;
+}
+.coins {
+	background-image: url(../images/icons/coins.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cup {
+	background-image: url(../images/icons/cup.png) !important;
+	background-repeat: no-repeat !important;
+}
+.chart_bar {
+	background-image: url(../images/icons/chart_bar.png) !important;
+	background-repeat: no-repeat !important;
+}
+.chart_curve {
+	background-image: url(../images/icons/chart_curve.png) !important;
+	background-repeat: no-repeat !important;
+}
+.preview {
+	background-image: url(../images/icons/preview.png) !important;
+	background-repeat: no-repeat !important;
+}
+.user_add {
+	background-image: url(../images/icons/user_add.png) !important;
+	background-repeat: no-repeat !important;
+}
+.plugin {
+	background-image: url(../images/icons/plugin.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cart {
+	background-image: url(../images/icons/cart.png) !important;
+	background-repeat: no-repeat !important;
+}
+.creditcards {
+	background-image: url(../images/icons/creditcards.png) !important;
+	background-repeat: no-repeat !important;
+}
+.flag_red {
+	background-image: url(../images/icons/flag_red.png) !important;
+	background-repeat: no-repeat !important;
+}
+.email {
+	background-image: url(../images/icons/email.png) !important;
+	background-repeat: no-repeat !important;
+}
+
+.page_white_text {
+	background-image: url(../images/icons/page_white_text.png) !important;
+	background-repeat: no-repeat !important;
+}
+.page {
+	background-image: url(../images/icons/page.png) !important;
+	background-repeat: no-repeat !important;
+}
+.car {
+	background-image: url(../images/icons/car.png) !important;
+	background-repeat: no-repeat !important;
+}
+.application_view_columns {
+	background-image: url(../images/icons/application_view_columns.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tag_blue {
+	background-image: url(../images/icons/tag_blue.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tag_blue_edit {
+	background-image: url(../images/icons/tag_blue_edit.png) !important;
+	background-repeat: no-repeat !important;
+}
+.award_star_gold_2 {
+	background-image: url(../images/icons/award_star_gold_2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.coins_delete {
+	background-image: url(../images/icons/coins_delete.png) !important;
+	background-repeat: no-repeat !important;
+}
+.page_excel {
+	background-image: url(../images/icons/page_excel.png) !important;
+	background-repeat: no-repeat !important;
+}
+.drink {
+	background-image: url(../images/icons/drink.png) !important;
+	background-repeat: no-repeat !important;
+}
+.arrow_refresh_small {
+	background-image: url(../images/icons/arrow_refresh_small.png) !important;
+	background-repeat: no-repeat !important;
+}
+.arrow_undo {
+	background-image: url(../images/icons/arrow_undo.png) !important;
+	background-repeat: no-repeat !important;
+}
+.comments {
+	background-image: url(../images/icons/comments.png) !important;
+	background-repeat: no-repeat !important;
+}
+.comment {
+	background-image: url(../images/icons/comment.png) !important;
+	background-repeat: no-repeat !important;
+}
+.page_white_excel {
+	background-image: url(../images/icons/page_white_excel.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table_lightning {
+	background-image: url(../images/icons/table_lightning.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table_save {
+	background-image: url(../images/icons/table_save.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table_row_delete {
+	background-image: url(../images/icons/table_row_delete.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tick {
+	background-image: url(../images/icons/tick.png) !important;
+	background-repeat: no-repeat !important;
+}
+.award_star_bronze_3 {
+	background-image: url(../images/icons/award_star_bronze_3.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table_relationship {
+	background-image: url(../images/icons/table_relationship.png) !important;
+	background-repeat: no-repeat !important;
+}
+.mouse {
+	background-image: url(../images/icons/mouse.png) !important;
+	background-repeat: no-repeat !important;
+}
+.award_star_silver_1 {
+	background-image: url(../images/icons/award_star_silver_1.png) !important;
+	background-repeat: no-repeat !important;
+}
+.printer {
+	background-image: url(../images/icons/printer.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cross {
+	background-image: url(../images/icons/cross.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tick {
+	background-image: url(../images/icons/tick.png) !important;
+	background-repeat: no-repeat !important;
+}
+.image {
+	background-image: url(../images/icons/image.png) !important;
+	background-repeat: no-repeat !important;
+}
+.bell {
+	background-image: url(../images/icons/bell.png) !important;
+	background-repeat: no-repeat !important;
+}
+.bell2 {
+	background-image: url(../images/icons/bell2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.bell_delete {
+	background-image: url(../images/icons/bell_delete.png) !important;
+	background-repeat: no-repeat !important;
+}
+.help {
+	background-image: url(../images/icons/help.png) !important;
+	background-repeat: no-repeat !important;
+}
+.upload {
+	background-image: url(../images/icons/upload.png) !important;
+	background-repeat: no-repeat !important;
+}
+.application_view_list {
+	background-image: url(../images/icons/application_view_list.png) !important;
+	background-repeat: no-repeat !important;
+}
+.wrench {
+	background-image: url(../images/icons/wrench.png) !important;
+	background-repeat: no-repeat !important;
+}
+.page_white_paint {
+	background-image: url(../images/icons/page_white_paint.png) !important;
+	background-repeat: no-repeat !important;
+}
+.phone {
+	background-image: url(../images/icons/phone.png) !important;
+	background-repeat: no-repeat !important;
+}
+
+
+
+.dpgl {
+	background-image: url(../images/icons/dpgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.dh {
+	background-image: url(../images/icons/dh.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cwgl {
+	background-image: url(../images/icons/cwgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.dpsz {
+	background-image: url(../images/icons/dpsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kcgl {
+	background-image: url(../images/icons/kcgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.khgl {
+	background-image: url(../images/icons/khgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.default {
+	background-image: url(../images/icons/default.png) !important;
+	background-repeat: no-repeat !important;
+}
+.bxlp {
+	background-image: url(../images/icons/bxlp.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kqsz {
+	background-image: url(../images/icons/kqsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kdgl {
+	background-image: url(../images/icons/kdgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.khcz {
+	background-image: url(../images/icons/khcz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.khth {
+	background-image: url(../images/icons/khth.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tckc {
+	background-image: url(../images/icons/tckc.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ddscjl {
+	background-image: url(../images/icons/ddscjl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tcgm {
+	background-image: url(../images/icons/tcgm.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tcsz {
+	background-image: url(../images/icons/tcsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.xmxf {
+	background-image: url(../images/icons/xmxf.png) !important;
+	background-repeat: no-repeat !important;
+}
+.fwsz {
+	background-image: url(../images/icons/fwsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.khxx {
+	background-image: url(../images/icons/khxx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.xfjl {
+	background-image: url(../images/icons/xfjl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.fwsz {
+	background-image: url(../images/icons/fwsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.hydj {
+	background-image: url(../images/icons/hydj.png) !important;
+	background-repeat: no-repeat !important;
+}
+.czsz {
+	background-image: url(../images/icons/czsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tcgl {
+	background-image: url(../images/icons/tcgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.zcgl {
+	background-image: url(../images/icons/zcgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.zjzc {
+	background-image: url(../images/icons/zjzc.png) !important;
+	background-repeat: no-repeat !important;
+}
+.zclx {
+	background-image: url(../images/icons/zclx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ysgl {
+	background-image: url(../images/icons/ysgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.yfgl {
+	background-image: url(../images/icons/yfgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ygyjtc {
+	background-image: url(../images/icons/ygyjtc.png) !important;
+	background-repeat: no-repeat !important;
+}
+.hycztj {
+	background-image: url(../images/icons/hycztj.png) !important;
+	background-repeat: no-repeat !important;
+}
+.yylstj {
+	background-image: url(../images/icons/yylstj.png) !important;
+	background-repeat: no-repeat !important;
+}
+.sprk {
+	background-image: url(../images/icons/sprk.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kcdb {
+	background-image: url(../images/icons/kcdb.png) !important;
+	background-repeat: no-repeat !important;
+}
+.spdc {
+	background-image: url(../images/icons/spdc.png) !important;
+	background-repeat: no-repeat !important;
+}
+.spdr {
+	background-image: url(../images/icons/spdr.png) !important;
+	background-repeat: no-repeat !important;
+}
+.dbcx {
+	background-image: url(../images/icons/dbcx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kcpd {
+	background-image: url(../images/icons/kcpd.png) !important;
+	background-repeat: no-repeat !important;
+}
+.kccx {
+	background-image: url(../images/icons/kccx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.rkjl {
+	background-image: url(../images/icons/rkjl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ckjl {
+	background-image: url(../images/icons/ckjl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.gysgl {
+	background-image: url(../images/icons/gysgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.dxgl {
+	background-image: url(../images/icons/dxgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.dxmbsz {
+	background-image: url(../images/icons/dxmbsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tcsz2 {
+	background-image: url(../images/icons/tcsz2.png) !important;
+	background-repeat: no-repeat !important;
+}
+.txsz {
+	background-image: url(../images/icons/txsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.xtsz {
+	background-image: url(../images/icons/xtsz.png) !important;
+	background-repeat: no-repeat !important;
+}
+.yggl {
+	background-image: url(../images/icons/yggl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ygjbxx {
+	background-image: url(../images/icons/ygjbxx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.ygzgl {
+	background-image: url(../images/icons/ygzgl.png) !important;
+	background-repeat: no-repeat !important;
+}
+.tbfx {
+	background-image: url(../images/icons/tbfx.png) !important;
+	background-repeat: no-repeat !important;
+}
+.table_relationship {
+	background-image: url(../images/icons/table_relationship.png) !important;
+	background-repeat: no-repeat !important;
+}
+.lock {
+	background-image: url(../images/icons/lock.png) !important;
+	background-repeat: no-repeat !important;
+}
+.phone_sound {
+	background-image: url(../images/icons/phone_sound.png) !important;
+	background-repeat: no-repeat !important;
+}
+.newspaper {
+	background-image: url(../images/icons/newspaper.png) !important;
+	background-repeat: no-repeat !important;
+}
+.lorry_go {
+	background-image: url(../images/icons/lorry_go.png) !important;
+	background-repeat: no-repeat !important;
+}
+.lorry {
+	background-image: url(../images/icons/lorry.png) !important;
+	background-repeat: no-repeat !important;
+}
+.lorry_delete {
+	background-image: url(../images/icons/lorry_delete.png) !important;
+	background-repeat: no-repeat !important;
+}
+.lorry_delete_black {
+	background-image: url(../images/icons/lorry_delete_black.png) !important;
+	background-repeat: no-repeat !important;
+}
+.application_tile_vertical {
+	background-image: url(../images/icons/application_tile_vertical.png) !important;
+	background-repeat: no-repeat !important;
+}
+
+
+
+
+
+
+

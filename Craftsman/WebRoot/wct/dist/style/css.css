@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+
+*{font-family: "Microsoft YaHei";}
+@media (max-device-width : 1024px) and (orientation : landscape) {
+    .tsm-head .bg-blur {max-height: 200px;}
+}
+.container {margin-bottom: 60px; background-color: #FFF;}
+.weui-tabbar {position: fixed;}
+
+/* 个人中心  */
+.tsm-head {position:relative;font-size: 14px;height: 300px;}
+.tsm-head .bg-noblur {position: absolute;}
+.tsm-head .bg-blur { -webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(4px); color: #000 }
+.tsm-head .head-content {height: 320px; width: 100%; position:absolute; left:0; top:0;}
+.tsm-head .head-content .m_info {height: 70%; color: #F6FAFB;}
+
+.tsm-head .head-content .m_info .left-head {float: left; width: 35%; height: 100%; text-align: center; }
+.tsm-head .head-content .m_info .left-head img {margin-top: 10px; border-radius: 50em; -webkit-border-radius: 50em; }
+.tsm-head .head-content .m_info .left-head .name {color: #F6FAFB; max-width: 132px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.tsm-head .head-content .m_info .img-head {text-align: center; margin-top: 30px;}
+.tsm-head .head-content .m_info .img-head img {border-radius: 50em; -webkit-border-radius: 50em; }
+.tsm-head .head-content .m_info .text-head {text-align: center;}
+.tsm-head .head-content .m_info .text-head .name{text-align: center;font-size: 20px}
+.tsm-head .head-content .m_info .text-head .info{margin-top: 6px;}
+.tsm-head .head-content .m_info .text-head .car{margin-top: 6px;font-size: 16px; }
+.tsm-head .head-content .m_info .text-head img {vertical-align:middle; margin-top: -2px }
+.tsm-head .head-content .m_info .text-head .car a:link{color:#fff; text-decoration: underline;}
+.tsm-head .head-content .m_info .text-head .car a:visited{color:#fff; text-decoration: underline; }
+.tsm-number {height: 55px; width: 100%; background-color: #F4F5F7; color: #67686A;}
+.tsm-number ul {height: 100%;}
+.tsm-number ul li {float: left; font-size: 15px; line-height: 55px; width: 33%; list-style:none; text-align: center; border-right: 1px solid #EDEEF0;  }
+.tsm-number .last {border-right: none; }
+.tsm-number ul li a {color: #67686A; };
+.tsm-number ul li a:LINK {color: #67686A};
+.tsm-number ul li a:HOVER {color: #67686A};
+.tsm-number ul li a:VISITED {color: #67686A};
+.tsm-list ul {height: 100%;}
+.tsm-list ul li {line-height: 75px; height:75px; width: 100%; list-style:none; text-align: left; border-bottom: 1px solid #E0E5E9;  }
+.tsm-list ul li img {vertical-align:middle; margin-top: -5px }
+.tsm-list ul li div{display:inline;}
+.tsm-list ul li .text{padding-left: 30px; font-size: 17px}
+.tsm-list ul li .arrow{float: right; margin-right: 40px;}
+.tsm-list ul li .text a:LINK{color: #000;}
+.tsm-list ul li .text a:HOVER{color: #000;}
+.tsm-list ul li .text a:VISITED{color: #000;}
+
+
+.tsm-head .head-content .m_info .right-info {float: left; width: 60%; height: 100%; padding-left: 5%; line-height: 35px; }
+.tsm-head .head-content .m_info .right-info .car a:link{color:#fff; text-decoration: underline; }
+.tsm-head .head-content .m_info .right-info .car a:visited{color:#fff; text-decoration: underline; }
+.tsm-head .head-content .m_info .right-info img {vertical-align:middle; margin-top: -2px }
+.tsm-head .head-content .m_info .right-info .text {padding-left: 2px; }
+.tsm-head .head-content .m_info .right-info .location{margin-top: 35px; font-size: 15px; }
+.tsm-head .head-content .num_bar {height: 30%; width: 100%; background-color: #525355; color: #F7F8F9;}
+.tsm-head .head-content .num_bar ul {height: 100%;}
+.tsm-head .head-content .num_bar ul li {float: left; height: 80%; width: 24.5%; list-style:none; text-align: center; border-right: 1px solid #909193; margin-top: 6px }
+.tsm-head .head-content .num_bar .last {border-right: none; padding-top: 14px}
+.tsm-head .head-content .num_bar ul li a {color: #F7F8F9; };
+.tsm-head .head-content .num_bar ul li a:LINK {color: #F7F8F9};
+.tsm-head .head-content .num_bar ul li a:HOVER {color: #F7F8F9};
+.tsm-head .head-content .num_bar ul li a:VISITED {color: #F7F8F9};
+.tsm-head .head-content .num_bar ul li a .number {font-size: 15px; margin: 0 3px; }
+.tsm-head .head-content .num_bar ul li a .emp {color: #DA3E3C; font-weight: bold; }
+
+.tsm-message {width: 92%; height: 30px; background-color: #EFEFEF; padding: 2% 4%; }
+.tsm-message .content {width: 100%; height: 28px; background-color: #FFF; border-radius: 5px; }
+.tsm-message .content .notice {line-height: 28px; height: 28px; margin-left: 8px }
+.tsm-message .content .notice img {vertical-align:middle;}
+.tsm-message .content .text {margin-left: 5px}
+
+.weui-grids {padding: 10px 5px;}
+.tsm-index-grid {width: 50%; padding: 6px 5px;}
+.weui-grid:after {border-bottom: none;}
+.weui-grid:before {border-right: none;}
+.weui-grid__icon {width: 95%;height: 100%;}
+
+.weui-cells__title {margin: 0;}
+.weui-cells__title .text{color: #fff; height: 50px; line-height: 50px; font-size: 16px; padding-left: 20px;}
+.weui-label {width: 90px;}
+.title_bg {height: 50px; background-image: url(../img/title_bg.png); background-size: cover; }
+.gray_bg {background-color: #F7F7F7}
+.illegal_bar {height: 50px; width: 90%; background-color: #fff; margin: 20px auto; border: 2px solid #C4C4C4; border-radius: 8px}
+.illegal_bar .bar_content {display: inline-block; width: 31%; height: 50px; line-height: 50px; text-align: center; font-size: 15px;}
+.illegal_bar .bar_content .num {color: red;}
+.illegal_img {text-align: center; margin-top: 60px;}
+.illegal_img img{width: 60%; text-align: center;}
+
+.tsm-cells {margin-top: 0; font-size: 14px}
+.tsm-red {color: red;}
+.tsm-bing-select {width: 20%; padding-left: 0;}
+.tsm-bing-input {width: 50%}
+.tsm-disabled {color: #ccc;}
+
+.tsm-car-list .list{width: 96%; background-color: #fff; text-align: left; border: 1px solid #C4C4C4; margin: 20px auto; border-radius: 5px;}
+.tsm-left{float: left; padding: 3px 20px;}
+.tsm-left .title{margin: 10px auto;}
+.tsm-left .title .number{font-size: 20px}
+.tsm-left .title .number a:LINK{color: #000;}
+.tsm-left .title .number a:HOVER{color: #000;}
+.tsm-left .title .number a:VISITED{color: #000;}
+.tsm-left .brand{font-size: 16px; }
+
+.tsm-stock-title{width: 96%; text-align: center; color:#5BB073; border: 1px solid #C4C4C4; font-weight: bold; margin: 15px auto; padding: 10px 0; border-radius: 2px;}
+.tsm-stock-content{width: 96%; text-align: center; border: 1px solid #C4C4C4; margin: 15px auto; padding: 10px 0; border-radius: 2px;}
+.tsm-label{width: 110px}
+.weui-btn + .weui-btn {margin-top: 5px;}
+.weui-select{height:30px; line-height: 30px;}
+
+.tsm-stock {margin: 0 5px;border: 1px solid #C4C4C4; font-size: 14px; border-radius: 2px; margin-top: 10px}
+.tsm-stock table{width: 100%}
+.tsm-stock table td:first-child{width: 25%}
+.tsm-stock table td:nth-child(2){width: 60%}
+.tsm-stock table td:last-child{width: 15%}
+
+.tsm-record {margin: 0 5px;border: 1px solid #C4C4C4; font-size: 14px; border-radius: 2px; margin-top: 10px}
+.tsm-record table{width: 100%}
+.tsm-record table td:first-child{width: 35%}
+.tsm-record table td:nth-child(2){width: 50%}
+.tsm-record table td:last-child{width: 10%}
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 店铺 -->
+    <package name="shop" namespace="/shop" extends="summer-struts">
+    
+	    <!-- 员工 -->
+	    <action name="initEmployee">
+            <result name="success">/mgr/business/shop/employeeManage.jsp</result>
+        </action>
+        <action name="*Employee*" class="employeeAction" method="{1}Employee{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">employeeList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="*Employee" class="employeeAction" method="{1}Employee">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 员工组 -->
+	    <action name="initEmployeeGroup">
+            <result name="success">/mgr/business/shop/employeeGroupManage.jsp</result>
+        </action>
+        <action name="queryEmployeeGroupByDept" class="employeeAction" method="queryEmployeeGroupByDept">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">employeeList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 供应商管理 -->
+	    <action name="initSupplier">
+            <result name="success">/mgr/business/shop/supplierManage.jsp</result>
+        </action>
+        <action name="*Supplier*" class="supplierAction" method="{1}Supplier{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">supplierList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 店铺参数配置 -->
+	    <action name="initParam">
+            <result name="success">/mgr/business/shop/paramManage.jsp</result>
+        </action>
+        <action name="queryParamById" class="paramAction" method="queryParamById">
+            <result type="json">
+            	<param name="root">param</param>
+            </result>
+        </action>
+        <action name="*Param*" class="paramAction" method="{1}Param{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 充值赠送配置 -->
+	    <action name="initRechargeSetting">
+            <result name="success">/mgr/business/shop/rechargeManage.jsp</result>
+        </action>
+        <action name="*Recharge*" class="rechargeAction" method="{1}Recharge{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">rList.*, dList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 店铺设置 -->
+	    <action name="initSetting">
+            <result name="success">/mgr/business/shop/settingManage.jsp</result>
+        </action>
+        <action name="querySettingByDept" class="settingAction" method="querySettingByDept">
+            <result type="json">
+            	<param name="root">setting</param>
+            </result>
+        </action>
+        <action name="*Setting*" class="settingAction" method="{1}Setting{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 店铺统计数据 -->
+        <action name="queryIndex*" class="statisticsAction" method="queryIndex{1}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">statisList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 提成设置 -->
+	    <action name="initCommission">
+            <result name="success">/mgr/business/shop/commissionManage.jsp</result>
+        </action>
+        <action name="initCommParam">
+            <result name="success">/mgr/business/shop/commParamManage.jsp</result>
+        </action>
+        <action name="initCommEmp">
+            <result name="success">/mgr/business/shop/commEmpManage.jsp</result>
+        </action>
+	    <action name="initCommissionReport">
+            <result name="success">/mgr/business/shop/commissionReport.jsp</result>
+        </action>
+        <action name="*Commission*" class="commissionAction" method="{1}Commission{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">cList.*, tcList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryCommParamById" class="commissionAction" method="queryCommParamById">
+            <result type="json">
+            	<param name="root">commParam</param>
+            </result>
+        </action>
+        <action name="*CommParan*" class="commissionAction" method="{1}CommParan{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

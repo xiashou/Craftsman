@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <package name="aparams" namespace="/wechat/sys" extends="summer-struts">
+    
+	    <!-- 授权方（公众号）参数 -->
+	    <action name="initWechatAuthorizerParams">
+            <result name="success">/mgr/business/wechat/sys/wechatAuthorizerParamsManage.jsp</result>
+        </action>
+        
+        <action name="*WechatAuthorizerParams*" class="wechatAuthorizerParamsAction" method="{1}WechatAuthorizerParams{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatAuthorizerParamsList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 消息模板 -->
+        <action name="initWechatMsgTemplate">
+            <result name="success">/mgr/business/wechat/sys/wechatMsgTemplateManage.jsp</result>
+        </action>
+        
+        <action name="*WechatMsgTemplate*" class="WechatMsgTemplateAction" method="{1}WechatMsgTemplate{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatMsgTemplateList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 消息模板类型 -->
+        <action name="initWechatMsgTemplateType">
+            <result name="success">/mgr/business/wechat/sys/wechatMsgTemplateTypeManage.jsp</result>
+        </action>
+        
+        <action name="*WechatMsgTypeTemplate*" class="WechatMsgTemplateTypeAction" method="{1}WechatMsgTypeTemplate{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">wechatMsgTemplateTypeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 会员 -->
+    <package name="openMember" namespace="/open/member" extends="summer-struts">
+    
+	    <!-- 会员基本信息 -->
+	    <action name="initMemberInfo">
+            <result>/mgr/business/member/memberManage.jsp</result>
+        </action>
+        <action name="createMember" class="memberAction" method="createMember">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        <action name="*Member*" class="memberAction" method="{1}Member{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">memberList.*, vipNo, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 会员车辆信息 -->
+	    <action name="initMemberCar">
+            <result>/mgr/business/member/memberCarManage.jsp</result>
+        </action>
+        <action name="queryCarByMemberId" class="memberCarAction" method="queryCarByMemberId">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">carList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <action name="*Car*" class="memberCarAction" method="{1}Car{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">carList.*, car.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 会员等级价格 -->
+        <action name="*GradePrice*" class="gradePriceAction" method="{1}GradePrice{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">gradePriceList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 会员等级 -->
+        <action name="initMemberGrade">
+            <result>/mgr/business/member/memberGradeManage.jsp</result>
+        </action>
+        <action name="*Grade*" class="memberGradeAction" method="{1}Grade{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">gradeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 会员库存 -->
+        <action name="initMemberStock">
+            <result>/mgr/business/member/memberStockManage.jsp</result>
+        </action>
+        <action name="queryMemberStockByMemId" class="memberStockAction" method="queryMemberStockByMemId">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">msList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <action name="queryMemberStockDetailByMemId" class="memberStockAction" method="queryMemberStockDetailByMemId">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">msList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        <action name="queryMemberStockByDept" class="memberStockAction" method="queryMemberStockByDept">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">msList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

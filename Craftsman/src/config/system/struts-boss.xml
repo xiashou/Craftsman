@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 老板端 -->
+    <package name="blogin" namespace="/" extends="summer-struts">
+    	
+    	<action name="blogin">
+            <result>/wctmgr/login.jsp</result>
+        </action>
+        <action name="bossLogin" class="loginAction" method="bossLogin">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        
+    </package>
+    
+    <package name="boss" namespace="/boss" extends="summer-struts">
+    
+    	<action name="bindex" class="bossAction" method="initBoss">
+            <result name="success">/wctmgr/index.jsp</result>
+            <result name="login">/wctmgr/login.jsp</result>
+        </action>
+    
+    	<action name="queryDayTurnover" class="bossAction" method="queryDayTurnover">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">price, success, msg</param>	
+            </result>
+        </action>
+    	<action name="queryDayGownth" class="bossAction" method="queryDayGownth">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">gownth, success, msg</param>	
+            </result>
+        </action>
+        <action name="querySalesGroupType" class="bossAction" method="querySalesGroupType">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">orderList.*, success, msg</param>	
+            </result>
+        </action>
+        <action name="queryReceivable" class="bossAction" method="breceivable">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">rList.*, receList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryPayable" class="bossAction" method="bpayable">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">rList.*, payList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryStock" class="bossAction" method="bstore">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">rList.*, stockList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryMember" class="bossAction" method="bsearchMember">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">memberList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="queryStock" class="bossAction" method="bsearchStore">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">stockList.*, success, msg</param>
+            </result>
+        </action>
+    
+        <action name="bsales" class="bossAction" method="bsales">
+            <result>/wctmgr/sales/sales.jsp</result>
+        </action>
+        <action name="breceivable" class="bossAction" method="breceivable">
+            <result>/wctmgr/fico/receivable.jsp</result>
+        </action>
+        <action name="bpayable" class="bossAction" method="bpayable">
+            <result>/wctmgr/fico/payable.jsp</result>
+        </action>
+        <action name="bmember" class="bossAction" method="bmember">
+            <result>/wctmgr/member/member.jsp</result>
+        </action>
+        <action name="bstore" class="bossAction" method="bstore">
+            <result>/wctmgr/store/store.jsp</result>
+        </action>
+        <action name="bsearchMember" class="bossAction" method="bsearchMember">
+            <result>/wctmgr/member/searchMember.jsp</result>
+        </action>
+        <action name="bsearchStore" class="bossAction" method="bsearchStore">
+            <result>/wctmgr/store/searchStore.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>

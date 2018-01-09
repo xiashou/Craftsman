@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 数据分析 -->
+    <package name="analysis" namespace="/analysis" extends="summer-struts">
+    
+	    <!-- 销售数据分析 -->
+	    <action name="initSalesChart">
+            <result>/mgr/business/analysis/salesChart.jsp</result>
+        </action>
+        <!-- 会员数据分析 -->
+	    <action name="initMemberChart">
+            <result>/mgr/business/analysis/memberChart.jsp</result>
+        </action>
+        <!-- 图表 -->
+    	<action name="*Analysis*" class="analysisAction" method="{1}Analysis{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">saList.*, success, msg</param>	
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/gg.css">
+    <link rel="stylesheet" href="css/list.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/list.js"></script>
+    <title>商品列表页</title>
+</head>
+<body>
+<div class="search_box">
+    <a href="javascript:history.back()" class="back lf"></a>
+    <a href="search.html" class="search lf">输入商品名称</a>
+</div>
+<div class="navbar">
+    <a href="javascript:void(0)" class="p_order active">综合</a>
+    <a href="javascript:void(0)" class="uptime">新品</a>
+    <a href="javascript:void(0)" class="price">
+        <div class="sort">
+            <div class="sort_up"></div>
+            <div class="sort_down"></div>
+        </div>
+        价格
+    </a>
+    <a href="javascript:void(0)" class="filter">筛选</a>
+</div>
+<!--——————右侧栏——————-->
+<div class="side_right">
+    <div class="one">
+        <div class="navbar_right">
+            <a href="#" class="close lf">关闭</a>
+            <p>筛选</p>
+            <a href="#" class="ok rf">确定</a>
+        </div>
+        <div class="condition">
+            <ul>
+                <li class="fl">分类
+                    <div class="rf">
+                        <span>全部</span>
+                    </div>
+                </li>
+                <li class="jg">价格
+                    <div class="rf">
+                        <span>全部</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="one_one">
+        <div class="top">
+            <a href="javascript:history.back()" class="to_one lf"></a>
+            <span>全部分类</span>
+        </div>
+        <ul class="category_list">
+            <li class="category_list_item">全部</li>
+            <li class="category_list_item">
+                特卖专场
+                <ul>
+                    <li>今日抢购</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">每日新品
+                <ul>
+                    <li>每日新品</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">每周热卖
+                <ul>
+                    <li>每周热卖</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">个护化妆
+                <ul>
+                    <li>个护化妆</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">精品美食
+                <ul>
+                    <li>精品美食</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">地标特产
+                <ul>
+                    <li>地标特产</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">时令鲜果
+                <ul>
+                    <li>时令鲜果</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">流行服饰
+                <ul>
+                    <li>流行服饰</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">男女鞋靴
+                <ul>
+                    <li>男女鞋靴</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">时尚箱包
+                <ul>
+                    <li>时尚箱包</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">营养保健
+                <ul>
+                    <li>营养保健</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">母婴用品
+                <ul>
+                    <li>母婴用品</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">名酒名茶
+                <ul>
+                    <li>名酒名茶</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">家具日用
+                <ul>
+                    <li>家具日用</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">数码/家电
+                <ul>
+                    <li>数码/家电</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">首饰奢品
+                <ul>
+                    <li>首饰奢品</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+            <li class="category_list_item">品牌专场
+                <ul>
+                    <li>品牌专场</li>
+                    <li>新品上架</li>
+                    <li>每日新款服饰</li>
+                    <li>每周热销服饰</li>
+                    <li>年度热销排行</li>
+                    <li>欧美热销单品</li>
+                    <li>女装热销榜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="one_two">
+        <div class="top">
+            <a href="javascript:history.back()" class="to_one lf"></a>
+            <span>价格</span>
+        </div>
+        <ul>
+            <li>全部</li>
+            <li>0-99</li>
+            <li>99-499</li>
+            <li>500以上</li>
+        </ul>
+    </div>
+</div>
+
+<div class="list_show">
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="product_box">
+        <div class="product">
+            <a href="detail.html">
+                <img src="images/22.png" alt="">
+                <p class="jieshao">德国Aptamil爱他美白金版奶粉1段（新包装） 800g/罐</p>
+                <p class="jiage">￥228.00 <span>省￥71</span></p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="none">
+    <img src="images/none.png" alt="">
+    <p>没有您要找的商品哦</p>
+    <p>再搜搜其他商品吧</p>
+</div>
+</body>
+</html>

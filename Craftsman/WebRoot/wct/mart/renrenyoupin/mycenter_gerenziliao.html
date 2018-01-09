@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/gg.css"/>
+    <link rel="stylesheet" href="css/affirm_orders.css"/>
+    <!--<link rel="stylesheet" href="css/mui.min.css" />-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--<script src="js/affirm_orders.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/location2.js"></script>-->
+    <script src="layer/layer.js"></script>
+    <script src="js/mui.min.js"></script>
+    <title>确认订单</title>
+</head>
+	<body>
+		<div class="messageDiv Max">
+    <div class="messageTitle MaxTitle">
+        <img src="images/right.png" class="messageDivReturn  " alt=""/>
+        <div class="MaxTitleText">个人资料</div>
+        <img src="images/i-category-active.png" class="MaxMenu" alt=""/>
+    </div>
+    <div class="basisBoxTitle">基础信息</div>
+    <div class="basisBox">
+        <div class="headImg">
+              <div class="z headImgText">头像</div>
+              <div class="y headImgBox">
+                  <img class="upHeadImgBtn" src="images/0.jpg" alt=""/>
+                  <input type="file" id="upHeadImgBtn" style="display: none"/>
+              </div>
+        </div>
+        <div class="name smallBox">
+            <div class="z leftBox">昵称</div>
+            <div class="y rightBox">
+                <input type="text" value="悟空" placeholder="请输入昵称"/>
+            </div>
+        </div>
+        <div class="VipNum smallBox">
+            <div class="z leftBox">会员号</div>
+            <div class="y rightBox">
+                 <p>110</p>
+            </div>
+        </div>
+        <div class="Email smallBox">
+            <div class="z leftBox">邮箱地址</div>
+            <div class="y rightBox">
+                <input type="text" value="3333333@qq.com" placeholder="请输入邮箱地址"/>
+            </div>
+        </div>
+        <div class="gender smallBox">
+            <div class="z leftBox">性别</div>
+            <div class="y rightBox">
+                <input type="text" value="男" placeholder="请输入性别"/>
+            </div>
+        </div>
+        <div class="day smallBox">
+            <div class="z leftBox">生日</div>
+            <div class="y rightBox">
+                <select id="idYear" name="idYear" data=""></select>年
+                <select id="idMonth" name="idMonth" data="12"></select>月
+                <select id="idDay" name="idDay" data="1"></select>日
+
+            </div>
+            </div>
+        <div class="site mydizhiBox">
+            <div class="leftBox mydizhi">我的地址</div>
+            <div class="rightBox">
+                <span>张三</span><span>13533335444</span><br>
+                <span>四川省</span><span>成都市</span><span>金牛区</span>
+                <span>西南交大附属中学</span>
+            </div>
+        </div>
+        <div class="bankTitle" style="height: 50px;line-height: 50px;font-size: 1rem;">银行信息</div>
+        <div class="bank">
+            <div class="site smallBox">
+                <div class="z leftBox">收款银行</div>
+                <div class="y rightBox">
+                    <!--<input type="text" placeholder="请选择收款银行"/>-->
+                    <select name="" id="" class="bankSelect">
+                        <option value="请选择">请选择</option>
+                        <option value="中国银行">中国银行</option>
+                        <option value="农业银行">农业银行</option>
+                        <option value="交通银行">交通银行</option>
+                        <option value="招商银行">招商银行</option>
+                        <option value="建设银行">建设银行</option>
+                        <option value="工商银行">工商银行</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="site smallBox">
+                <div class="z leftBox">所属省份</div>
+                <div class="y rightBox">
+                    <select id="loc_province2" value="0"></select>
+                </div>
+            </div>
+            <div class="site smallBox">
+                <div class="z leftBox">所属市</div>
+                <div class="y rightBox">
+                    <select id="loc_city2" value="0"></select>
+                </div>
+            </div>
+            <div class="site smallBox">
+                <div class="z leftBox">所属支行</div>
+                <div class="y rightBox"><input type="text" placeholder="请输入支行名称"/></div>
+            </div>
+            <div class="site smallBox">
+                <div class="z leftBox">开户行</div>
+                <div class="y rightBox"><input type="text" placeholder="请输入开户行"/></div>
+            </div>
+            <div class="site smallBox">
+                <div class="z leftBox">银行账号</div>
+                <div class="y rightBox"><input type="text" placeholder="请输入银行账号"/></div>
+            </div>
+            <div class="blank_15"></div>
+            <input type="button" class="saveBtn" value="保存"/>
+            <div class="blank_15"></div>
+        </div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        showLocation2();
+    })
+</script>
+	</body>
+</html>

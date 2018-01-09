@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" href="css/gg.css">
+    <link rel="stylesheet" href="css/affirm_orders.css"/>
+    <!--<link rel="stylesheet" href="css/mui.min.css" />-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--<script src="js/affirm_orders.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/location2.js"></script>-->
+    <script src="layer/layer.js"></script>
+    <script src="js/mui.min.js"></script>
+    <title>确认订单</title>
+</head>
+<body>
+<div  class="affirm_pay">
+    <div class="top">
+        <a href="javascript:history.back()" class="back lf"></a>
+        <span>确认订单</span>
+    </div>
+    <div class="address_data">
+        <a class="address_link" href="javascript:void(0)">
+            <div class="consignee_data">
+                <p class="consignee_l lf">收货人：<span>xxxxx</span></p>
+                <p class="consignee_r rf">13281821234</p>
+            </div>
+            <div class="address">
+                收货地址：<span>四川省成都市高新区xxxxxxxxxxx</span>
+            </div>
+        </a>
+    </div>
+    <div class="order_content">
+        <div class="order">
+            <img class="lf" src="images/22.png" alt="">
+            <div class="data lf">
+                <div class="order_introduce">韩国 Papa recipe 春雨蜂蜜保湿爽肤水 200ml</div>
+                <div class="order_norms">爽肤水200ml</div>
+                <div class="p_n">
+                    <p class="price lf">￥<span>85</span></p>
+                    <p class="number rf">x<span>1</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="freight">运费 <span>包邮</span></div>
+        <div class="message">
+            <form action="">
+                <input type="text" placeholder="给商家留言">
+            </form>
+        </div>
+    </div>
+    <div class="coupon">
+        <!--<div class="lf">
+            <p>使用优惠券</p>
+            <p class="coupon_num">未使用优惠券(<span>1</span>)</p>
+        </div>
+        <div class="rf">
+            使用优惠券
+        </div>-->
+    <ul class="mui-table-view mui-table-view-radio payStyle" id="mui_box">
+		<li class="mui-table-view-cell liClick">
+			<a class="mui-navigate-right">
+				<div class="pay_fun"><img src="images/weixin6.png" class="pay_img"/>微信支付</div>
+                <img src="" alt=""/>
+			</a>
+            <img src="images/xuanzhong.png" class="xuanzhong" alt=""/>
+		</li>
+		<li class="mui-table-view-cell mui-selected">
+			<a class="mui-navigate-right"><img src="images/jinqian.jpg" class="pay_img" />支付宝支付</a>
+            <img src="images/xuanzhong.png" class="xuanzhong" alt=""/>
+		</li>
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right"><img src="images/huiyuan.jpg" class="pay_img"/>线下会员支付</a>
+            <img src="images/xuanzhong.png" class="xuanzhong" alt=""/>
+		</li>
+    </ul>
+    </div>
+    <div class="finally">
+        <p class="finally_num">共<span>1</span>件商品</p>
+        <div class="end">
+            <p class="total">商品总金额：<b>￥</b><span>85</span></p>
+            <p class="youhui">优惠：<span>0.00</span></p>
+            <p class="shifu">实付：<b>￥</b><span>85</span></p>
+        </div>
+    </div>
+    <div class="affirm">
+        <a href="javascript:viod(0)">确认付款</a>
+    </div>
+</div>
+<div  class="affirm_address">
+    <div class="affirm_address_head">
+        <ul>
+            <li><img class="affirm_address_img" src="images/back.png"/>确认</li>
+            <li>我的地址</li>
+            <li class="addBtn">添加</li>
+        </ul>
+    </div>
+    <div class="affirm_address_main">
+        <div class="nullDiv">
+            <img src="images/address.png"/>
+            <p>你还没有收货地址</p><br />
+            <input type="button" value="添加" style='display:block'/>
+        </div>
+        <div class="addContent">
+            <div class="content contentSlect" data-num="610061"
+                 morenProvinceId="0" morenCityId="0" morenCountyId="0" morenAddress="天府广场">
+                <div class="contentLeft">
+                    <span class='add_name'>赵柳</span><br>
+                    <span class='add_address'>地球</span>
+                </div>
+                <div class="contentRight">
+                    <span class='add_phone'>111111</span><br>
+                    <img src="images/gou.png" class="selectGou" alt=""/>
+                </div>
+                <div class="change">更改</div>
+                <div class="delect">删除</div>
+            </div>
+
+
+            <div class="content" data-num="610000" morenProvinceId="0" morenCityId="0" morenCountyId="0" morenAddress="高兴去">
+                <div class="contentLeft">
+                    <span class='add_name'>杰克</span><br>
+                    <span class='add_address'>美国</span>
+                </div>
+                <div class="contentRight">
+                    <span class='add_phone'>113232131</span><br>
+                    <img src="images/gou.png" class="selectGou" alt=""/>
+                </div>
+                <div class="change">更改</div>
+                <div class="delect">删除</div>
+            </div>
+
+            <div class="content" data-num="610031" morenProvinceId="0" morenCityId="0" morenCountyId="0" morenAddress="九里堤">
+                <div class="contentLeft">
+                    <span class='add_name'>张三</span><br>
+                    <span class='add_address'>成都市</span>
+                </div>
+                <div class="contentRight">
+                    <span class='add_phone'>13333333</span><br>
+                    <img src="images/gou.png" class="selectGou" alt=""/>
+                </div>
+                <div class="change">更改</div>
+                <div class="delect">删除</div>
+            </div>
+
+        </div>
+        </div>
+</div>
+<div class="address_add">
+        <div class="address_add_head_l">
+            <img class="affirm_add_head_img" src="images/back.png"/>
+            <span class="affirm_add_head_f" >返回</span>
+            <div class="affirm_add_head_new" >新增地址</div>
+        </div>
+    <div class="address_add_main" id="address_add_main">
+        <ul>
+            <li><span class="address_add_main_span">收货人</span><input  class="address_add_main_input" type="text" placeholder="请输入收货人" /></li>
+            <li><span class="address_add_main_span">手机号码</span><input class="address_add_main_input"type="text" placeholder="请输入手机号码"/></li>
+            <li><span class="address_add_main_span">所在省</span>
+                <!--<input class="address_add_main_input"type="text" placeholder="请选择所在省"/>-->
+                    <select id="loc_province" value="0"></select>
+                    <!--<select id="loc_city" value="0"></select>-->
+                    <!--<select id="loc_county" value="0"></select>-->
+            </li>
+            <li><span class="address_add_main_span">所在市</span>
+                <!--<input class="address_add_main_input"type="text" placeholder="请选择所在省"/>-->
+                <!--<select id="loc_province" value="0"></select>-->
+                <select id="loc_city" value="0"></select>
+                <!--<select id="loc_county" value="0"></select>-->
+            </li>
+            <li><span class="address_add_main_span">所在区</span>
+                <!--<input class="address_add_main_input"type="text" placeholder="请选择所在省"/>-->
+                <!--<select id="loc_province" value="0"></select>-->
+                <!--<select id="loc_city" value="0"></select>-->
+                <select id="loc_county" value="0"></select>
+            </li>
+            <li><span class="address_add_main_span">详细地址</span><input class="address_add_main_input"type="text" placeholder="请输入详细地址"/></li>
+            <li><span class="address_add_main_span">邮编</span><input class="address_add_main_input"type="text" placeholder="请输入邮编"/></li>
+        </ul>
+        <button class="address_add_main_but">保存</button>
+    </div>
+    <!--<button class="address_add_main_but">保存</button>-->
+</div>
+
+
+<div class="removeHint">
+    <div class="removeHintContent">
+        <p>系统提示</p>
+        <p>确定要删除吗？</p>
+        <div class="noBtn">取消</div>
+        <div class="yesBtn">确定</div>
+    </div>
+
+
+</div>
+<!-- <script src="js/jquery-1.8.3.min.js"></script>-->
+    <script src="js/affirm_orders.js"></script>
+    <script src="js/location.js"></script>
+    <script src="js/location2.js"></script>
+    <!--<script src="layer/layer.js"></script>
+    <script src="js/mui.min.js"></script>-->
+<script>
+    $(".data").css("width",parseInt($(".order").width())-80);
+
+    $(".affirm_address,.address_add").css({
+        height:$(window).height()
+    });
+
+    $(".address_link").click(function(){
+            $(".affirm_pay").hide();
+            $(".affirm_address").show();
+    });
+    $(".affirm_address_head li").eq(0).click(function(){
+        $(".affirm_pay").show();
+        $(".affirm_address").hide();
+    });
+
+    $(".affirm_address_main input,.addBtn").click(function(){
+        $(".affirm_address").hide();
+        $(".address_add").show();
+        $(".affirm_add_head_new").text("新增地址");
+    });
+
+    $(".affirm_add_head_img,.affirm_add_head_f").click(function(){
+        $(".affirm_address").show();
+        $(".address_add").hide();
+    });
+    showLocation();
+      alert(3);
+    if($('.content')[0]){ //存在\
+    	alert(1);
+    	 $(".addContent").show();
+         $(".nullDiv").hide();	
+    }
+    else{ //不存在
+    	 $(".nullDiv").show();
+         $(".addContent").hide();
+		alert(2);
+    }
+</script>
+</body>
+</html>

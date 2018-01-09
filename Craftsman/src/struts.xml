@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="atc"/>
+	<constant name="struts.multipart.parser" value="pell" />
+	<constant name="struts.allowed.action.names" value="[a-zA-Z]*" />
+	<constant name="struts.multipart.maxSize" value="10485760"/> 
+
+	<!-- 全局 -->
+	<package name="summer-struts" extends="json-default">
+	
+		<!-- 定义权限拦截器 -->  
+		<interceptors>
+     		<interceptor name="authorityInterceptor" class="com.tcode.common.interceptor.AuthorityInterceptor" />
+     		<interceptor-stack name="authorityStack" >
+	      		<interceptor-ref name="authorityInterceptor">
+	      			<param name="excludeParams">dojo\..*,^struts\..*,.*\\.*,.*\(.*,.*\).*,.*@.*</param>
+	      		</interceptor-ref>
+	      		<interceptor-ref name="defaultStack" />
+     		</interceptor-stack>
+    	</interceptors>
+    	
+    	<!-- 定义默认的拦截器栈，会自动注册到所有action中 -->  
+    	<default-interceptor-ref name="authorityStack"></default-interceptor-ref>  
+    
+		<global-results>
+			<result name="error">/mgr/common/error/error.jsp</result>
+			<result name="404">/mgr/common/error/404.jsp</result>
+			<result name="timeout1">/mgr/common/error/timeout1.jsp</result>
+			<result name="timeout2">/mgr/common/error/timeout2.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+	
+	<!-- 其他模块配置引入 -->
+	<include file="config/*/struts-*.xml"></include>
+
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/mgr/common/error/404.jsp</result>
+		</action>
+	</package>
+	
+
+</struts>

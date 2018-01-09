@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 微信入口 -->
+    <package name="wechatSys" namespace="/open/wechat/sys" extends="summer-struts">
+    
+    	<!-- 微信授权 -->
+        <action name="authorization" class="AuthorizationRedirectAction" method="authorization" />
+        
+    	<!-- 微信授权回调 -->
+        <action name="authorizationRedirect" class="AuthorizationRedirectAction" method="authorizationRedirect" >
+        	<result name="success">/mgr/login.jsp</result>
+        </action>
+        
+        <!-- 处理授权者业务入口 -->
+        <action name="authorizerBiz" class="AuthorizerBizAction" method="croeAuthorizerBiz" />
+        
+        <!-- 网页鉴权 -->
+        <action name="authorizeOauth2*" class="AuthorizeOauth2Action" method="{1}" />
+        
+        <!-- 验证码 -->
+        <action name="*VerificationCode*" class="VerificationCodeAction" method="{1}VerificationCode{2}">
+        	<result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">car.*, verificationCode.*</param>
+            </result>
+        </action>
+        
+        <!-- 文件上传 -->
+        <action name="*FileUpload*" class="FileUploadAction" method="{1}FileUpload{2}" >
+        	<result name="success">/wct/authorizer/uploadSuccess.jsp</result>
+        </action>
+        
+    </package>
+    
+</struts>
