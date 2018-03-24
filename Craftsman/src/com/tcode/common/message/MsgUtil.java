@@ -341,7 +341,7 @@ public class MsgUtil {
 			Integer carId = orderHead.getCarId();
 			String goodsId = orderItem.getGoodsId();
 			String number = decimalFormat.format(orderItem.getNumber()) + "次";//消费数量，即套餐扣除次数
-			String goodsNum = decimalFormat.format(memberStockService.getGoodsNum(memId, goodsId)) + "次";//库存数
+			String goodsNum = decimalFormat.format(Utils.isEmpty(goodsId)?0.0:memberStockService.getGoodsNum(memId, goodsId)) + "次";//库存数
 			MemberCar memberCar = memberCarService.getMemberCarById(carId);
 			String carKilometers = memberCar.getCarKilometers() + "公里";
 			typeValue = typeValue + ",扣除" + number;

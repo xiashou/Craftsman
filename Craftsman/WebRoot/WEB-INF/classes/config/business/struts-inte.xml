@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 系统对接 -->
+    <package name="inte" namespace="/inte/jx" extends="summer-struts">
+    
+	    <!-- 企业注册 -->
+	    <action name="initRegister">
+            <result>/mgr/business/inte/registerManage.jsp</result>
+        </action>
+        <action name="queryRegisterByDept" class="registerAction" method="queryRegisterByDept">
+            <result type="json">
+            	<param name="root">register</param>
+            </result>
+        </action>
+        <action name="*Register*" class="registerAction" method="{1}Register{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">register.*, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

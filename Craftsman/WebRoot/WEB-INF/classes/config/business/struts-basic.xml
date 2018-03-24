@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 基础信息 -->
+    <package name="base" namespace="/base" extends="summer-struts">
+    
+	    <!-- 省市简称 -->
+	    <action name="initBaseArea">
+            <result>/mgr/business/basic/areaManage.jsp</result>
+        </action>
+        <action name="queryBaseAreaTree" class="baseAreaAction" method="queryBaseAreaTree">
+            <result type="json">
+            	<param name="root">areaList</param>
+            </result>
+        </action>
+        <action name="*BaseArea*" class="baseAreaAction" method="{1}BaseArea{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">areaList.*, area.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 车牌区域简称 -->
+	    <action name="initAreaShort">
+            <result>/mgr/business/basic/areaShortManage.jsp</result>
+        </action>
+        <action name="*AreaShort*" class="areaShortAction" method="{1}AreaShort{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">areaShortList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 车牌代码 -->
+	    <action name="initAreaCode">
+            <result>/mgr/business/basic/areaCodeManage.jsp</result>
+        </action>
+        <action name="*AreaCode*" class="areaCodeAction" method="{1}AreaCode{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">areaCodeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 汽车基础信息管理 -->
+        <action name="initCarBaseInfo">
+            <result>/mgr/business/basic/carBaseInfoManage.jsp</result>
+        </action>
+        
+        <!-- 汽车品牌 -->
+	    <action name="initCarBrand">
+            <result>/mgr/business/basic/carBrandManage.jsp</result>
+        </action>
+        <action name="*CarBrand*" class="carBrandAction" method="{1}CarBrand{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">carBrandList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 汽车系列 -->
+	    <action name="initCarSeries">
+            <result>/mgr/business/basic/carSeriesManage.jsp</result>
+        </action>
+        <action name="*CarSeries*" class="carSeriesAction" method="{1}CarSeries{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">carSeriesList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 汽车型号 -->
+	    <action name="initCarModel">
+            <result>/mgr/business/basic/carModelManage.jsp</result>
+        </action>
+        <action name="*CarModel*" class="carModelAction" method="{1}CarModel{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">carModelList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 图片 -->
+	    <action name="initBaseImage">
+            <result>/mgr/business/basic/imageManage.jsp</result>
+        </action>
+        <action name="*Image*" class="baseImageAction" method="{1}Image{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">imageList.*, success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

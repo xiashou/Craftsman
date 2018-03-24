@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 消息 -->
+    <package name="message" namespace="/msg" extends="summer-struts">
+    
+	    <!-- 提醒模板 -->
+	    <action name="initMsgTemplate">
+            <result name="success">/mgr/business/message/templateManage.jsp</result>
+        </action>
+        <action name="*MsgTemplate*" class="MsgTemplateAction" method="{1}MsgTemplate{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">msgTemplateList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 短信管理 -->
+        <action name="initMsgSendRecord">
+            <result name="success">/mgr/business/message/msgSendRecordManage.jsp</result>
+        </action>
+        <action name="*MsgSendRecord*" class="MsgSendRecordAction" method="{1}MsgSendRecord{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">msgSendRecordList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 短信充值管理 -->
+        <action name="*MsgCharging*" class="MsgChargingAction" method="{1}MsgCharging{2}">
+            <result type="json">
+            	<param name="root">msgCharging</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

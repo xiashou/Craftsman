@@ -275,7 +275,7 @@ Ext.onReady(function() {
 	
 	function getParams(){
 		return {
-			'inStock.supplier': supplierCombo.getValue(),
+			'inStock.supplier': isNaN(supplierCombo.getValue())?0:supplierCombo.getValue(),
 			'inStock.inNumber': Ext.getCmp("inNumber").getValue(),
 //			'inStock.settlement': settlementCombo.getValue(),
 			'inStock.goodsName': Ext.getCmp("goodsName").getValue(),

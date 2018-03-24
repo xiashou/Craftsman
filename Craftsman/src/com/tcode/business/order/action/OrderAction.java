@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.tcode.business.goods.service.GoodsStockService;
+import com.tcode.business.inte.jxcs.service.RegisterService;
 import com.tcode.business.member.model.Member;
 import com.tcode.business.member.model.MemberCar;
 import com.tcode.business.member.model.MemberStock;
@@ -51,6 +52,7 @@ public class OrderAction extends BaseAction {
 	private ReptDeleteService reptDeleteService;
 	private ReptGoodsService reptGoodsService;
 	private SettingService settingService;
+	private RegisterService jx_registerService;
 	
 	private OrderHead orderHead;
 	private OrderItem orderItem;
@@ -170,6 +172,7 @@ public class OrderAction extends BaseAction {
 							MsgUtil.sendConsumerMsg(this.getRequest(), 1, orderNo);	//发送消费完成通知短信
 //							MsgUtil.sendConsumerMsg(1, orderNo);	
 					}
+					jx_registerService.sendRepairInfo(orderHead, itemList);	//系统对接
 				}
 			}
 		} catch(Exception e) {
@@ -846,11 +849,20 @@ public class OrderAction extends BaseAction {
 	public void setSettingService(SettingService settingService) {
 		this.settingService = settingService;
 	}
-	
-	
-	
-	
+	public RegisterService getJx_registerService() {
+		return jx_registerService;
+	}
+	@Resource
+	public void setJx_registerService(RegisterService jx_registerService) {
+		this.jx_registerService = jx_registerService;
+	}
 
+	
+	
+	
+	
+	
+	
 	public String getOrderNo() {
 		return orderNo;
 	}

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 微信商城 -->
+    <package name="mall" namespace="/mall" extends="summer-struts">
+    
+	    <!-- 品牌管理 -->
+	    <action name="initMallBrand">
+            <result>/mgr/business/mall/mallBrand.jsp</result>
+        </action>
+        <action name="*MallBrand*" class="mallBrandAction" method="{1}MallBrand{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">brandList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 类型管理 -->
+	    <action name="initMallGoodsType">
+            <result>/mgr/business/mall/mallGoodsType.jsp</result>
+        </action>
+        <action name="*MallGoodsType*" class="mallGoodsTypeAction" method="{1}MallGoodsType{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">goodsTypeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 配送方式管理 -->
+	    <action name="initMallSendMode">
+            <result>/mgr/business/mall/mallSendMode.jsp</result>
+        </action>
+        <action name="*MallSendMode*" class="mallSendModeAction" method="{1}MallSendMode{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">sendModeList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 商品管理 -->
+	    <action name="initMallGoods">
+            <result>/mgr/business/mall/mallGoods.jsp</result>
+        </action>
+        <action name="*MallGoods*" class="mallGoodsAction" method="{1}MallGoods{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">goodsList.*, uploadFileName, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- banner管理 -->
+	    <action name="initMallBanner">
+            <result>/mgr/business/mall/mallBanner.jsp</result>
+        </action>
+        <action name="*MallBanner*" class="mallBannerAction" method="{1}MallBanner{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">bannerList.*, uploadFileName, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 轮胎配置 -->
+	    <action name="initMallTyre">
+            <result>/mgr/business/mall/mallTyre.jsp</result>
+        </action>
+        <action name="*MallTyre*" class="mallTyreAction" method="{1}MallTyre{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">tyreList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 保养配置 -->
+	    <action name="initMallMaintain">
+            <result>/mgr/business/mall/mallMaintain.jsp</result>
+        </action>
+        <action name="*MallMaintain*" class="mallMaintainAction" method="{1}MallMaintain{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">mainList.*, success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 商城设置 -->
+	    <action name="initMallSetting">
+            <result>/mgr/business/mall/mallSetting.jsp</result>
+        </action>
+        <action name="queryMallSettingByAppId" class="mallSettingAction" method="queryMallSettingByAppId">
+            <result type="json">
+            	<param name="root">setting</param>
+            </result>
+        </action>
+        <action name="*MallSetting*" class="mallSettingAction" method="{1}MallSetting{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 商城订单 -->
+        <action name="initMallPendingOrder">
+            <result>/mgr/business/mall/mallPendingOrder.jsp</result>
+        </action>
+        <action name="initMallAllOrder">
+            <result>/mgr/business/mall/mallAllOrder.jsp</result>
+        </action>
+        <action name="*MallOrder*" class="mallOrderAction" method="{1}MallOrder{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">orderList.*, totalCount, success, msg</param>
+            </result>
+        </action>
+        
+        
+        <!-- 商城页面 -->
+        <action name="initBrandSelect" class="mallWebAction" method="initBrandSelect">
+            <result>/wct/mart/selectBrand.jsp</result>
+        </action>
+        <action name="initSeriesSelect" class="mallWebAction" method="initSeriesSelect">
+            <result>/wct/mart/selectSeries.jsp</result>
+        </action>
+        <action name="initModelSelect" class="mallWebAction" method="initModelSelect">
+            <result>/wct/mart/selectModel.jsp</result>
+        </action>
+        <action name="initMallGoodsDetail" class="mallWebAction" method="initMallGoodsDetail">
+            <result>/wct/mart/detail.jsp</result>
+        </action>
+        <action name="initPay" class="mallCartAction" method="initPay">
+            <result>/wct/mart/confirm.jsp</result>
+        </action>
+        <action name="initOrderPay" class="mallCartAction" method="initOrderPay">
+            <result>/wct/mart/confirm.jsp</result>
+        </action>
+        <action name="initSelectBuy" class="mallCartAction" method="initSelectBuy">
+            <result>/wct/mart/cart.jsp</result>
+        </action>
+        <action name="initDirectBuy" class="mallCartAction" method="initDirectBuy">
+            <result>/wct/mart/cart.jsp</result>
+        </action>
+        
+        <action name="*MallCart*" class="mallCartAction" method="{1}MallCart{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">cartList.*, modeList.*, addressList.*, success, msg</param>
+            </result>
+        </action>
+        <action name="*MallAddress*" class="mallAddressAction" method="{1}MallAddress{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">address.*, success, msg</param>
+            </result>
+        </action>
+        <action name="cancelOrder" class="mallWebAction" method="cancelOrder">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        <action name="confirmOrder" class="mallWebAction" method="confirmOrder">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 活动 -->
+        <action name="initActJoin" class="actSignupWebAction" method="initActJoin">
+            <result>/wct/activity/signup/join.jsp</result>
+        </action>
+        <action name="*ActJoiner" class="actJoinerAction" method="{1}ActJoiner">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+        <!-- 预约 -->
+        <action name="insertMemberBook" class="memberBookAction" method="insertMemberBook">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

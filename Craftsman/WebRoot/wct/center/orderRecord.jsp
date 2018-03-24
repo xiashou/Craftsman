@@ -154,7 +154,7 @@
     			});
     		}
         });
-        
+        $.hideLoading();
     });
 	</script>
   </body>

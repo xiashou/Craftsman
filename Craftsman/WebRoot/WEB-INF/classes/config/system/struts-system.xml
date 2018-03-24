@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+	<!-- 登录 -->
+    <package name="user" namespace="/" extends="summer-struts">
+    	<action name="login" class="loginAction" method="login">
+            <result name="success">/mgr/login.jsp</result>
+        </action>
+        <action name="logout" class="loginAction" method="logout">
+            <result name="success">/mgr/login.jsp</result>
+        </action>
+        <action name="userLogin" class="loginAction" method="userLogin">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        <action name="index" class="loginAction" method="initIndex">
+            <!-- <result name="success">/desktopmgr/index.jsp</result> -->
+            <result name="success">/mgr/index.jsp</result>
+            <result name="login">/mgr/login.jsp</result>
+        </action>
+        <action name="queryWeatherInfo" class="loginAction" method="queryWeatherInfo">
+            <result type="json">
+            	<param name="root">weatherInfo</param>	
+            </result>
+        </action>
+        <!-- 管理员专用登录方式 -->
+        <action name="slogin">
+            <result>/mgr/sysLogin.jsp</result>
+        </action>
+        <action name="sysLogin" class="loginAction" method="sysLogin">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        <!-- 代理端 -->
+        <action name="alogin">
+            <result>/mgr/agentLogin.jsp</result>
+        </action>
+        <action name="agentLogout" class="sysAgentAction" method="agentLogout">
+            <result>/mgr/agentLogin.jsp</result>
+        </action>
+        <action name="agentLogin" class="sysAgentAction" method="agentLogin">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        <action name="aindex" class="sysAgentAction" method="initAgentIndex">
+            <result name="success">/mgr/agentIndex.jsp</result>
+            <result name="login">/mgr/agentLogin.jsp</result>
+        </action>
+    </package>
+    
+    <!-- 系统相关 -->
+    <package name="system" namespace="/sys" extends="summer-struts">
+	    <!-- 系统菜单 -->
+	    <action name="initSysMenu">
+            <result>/mgr/system/menuManage.jsp</result>
+        </action>
+        <action name="queryMenu*" class="sysMenuAction" method="queryMenu{1}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">menuList.*,totalCount,menu.*</param>
+            </result>
+        </action>
+        <action name="query*Tree" class="sysMenuAction" method="query{1}Tree">
+            <result type="json">
+            	<param name="root">treeList</param>	
+            </result>
+        </action>
+        <action name="*SysMenu" class="sysMenuAction" method="{1}SysMenu">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+    
+    	<!-- 系统用户 -->
+    	<action name="initSysUser">
+            <result>/mgr/system/userManage.jsp</result>
+        </action>
+        <action name="initChangePassword">
+            <result>/mgr/system/changePassword.jsp</result>
+        </action>
+    	<action name="queryUserPage" class="sysUserAction" method="queryUserPage">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">userList.*,totalCount</param>	
+            </result>
+        </action>
+        <action name="*SysUser*" class="sysUserAction" method="{1}SysUser{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+    
+    	<!-- 系统角色 -->
+    	<action name="initSysRole">
+            <result>/mgr/system/roleManage.jsp</result>
+        </action>
+    	<action name="queryRolePage" class="sysRoleAction" method="queryRolePage">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">roleList.*,totalCount</param>	
+            </result>
+        </action>
+        <action name="query*Role" class="sysRoleAction" method="query{1}Role">
+        	<result type="json">
+            	<param name="root">roleList</param>	
+            </result>
+        </action>
+        <action name="*SysRole" class="sysRoleAction" method="{1}SysRole">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+    
+    	<!-- 角色菜单关联 -->
+        <action name="bindSysRoleMenu" class="sysRoleMenuAction" method="bindSysRoleMenu">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+    
+    	<!-- 组织架构 -->
+    	<action name="initSysDept">
+            <result>/mgr/system/deptManage.jsp</result>
+        </action>
+        <action name="initSysDeptReport">
+            <result>/mgr/system/deptReport.jsp</result>
+        </action>
+        <action name="querySysDeptPage" class="sysDeptAction" method="querySysDeptPage">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">deptList.*,totalCount</param>
+            </result>
+        </action>
+        <action name="queryAllDeptSimple" class="sysDeptAction" method="queryAllDeptSimple">
+            <result type="json">
+            	<param name="root">deptList</param>
+            </result>
+        </action>
+        <action name="query*SysDeptByCompany" class="sysDeptAction" method="query{1}SysDeptByCompany">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">deptList.*,totalCount</param>
+            </result>
+        </action>
+        <action name="queryDeptTree" class="sysDeptAction" method="queryDeptTree">
+            <result type="json">
+            	<param name="root">treeList</param>	
+            </result>
+        </action>
+        <action name="*SysDept" class="sysDeptAction" method="{1}SysDept">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        
+        <!-- 系统按钮 -->
+    	<action name="initSysButton">
+            <result>/mgr/system/buttonManage.jsp</result>
+        </action>
+        <action name="querySysButtonPage" class="sysButtonAction" method="querySysButtonPage">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">buttonList.*,totalCount</param>
+            </result>
+        </action>
+        <action name="*SysButton" class="sysButtonAction" method="{1}SysButton">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        
+        <!-- 系统全局参数 -->
+    	<action name="initSysParam">
+            <result>/mgr/system/paramManage.jsp</result>
+        </action>
+        <action name="querySysParamPage" class="sysParamAction" method="querySysParamPage">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">paramList.*,totalCount</param>
+            </result>
+        </action>
+        <action name="*SysParam" class="sysParamAction" method="{1}SysParam">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        
+        <!-- 系统操作指引 -->
+    	<action name="initSysHelp">
+            <result>/mgr/system/helpManage.jsp</result>
+        </action>
+        <action name="initViewSysHelp">
+            <result>/mgr/system/helpView.jsp</result>
+        </action>
+        <action name="querySysHelpById" class="sysHelpAction" method="querySysHelpById">
+            <result type="json">
+            	<param name="root">sysHelp</param>
+            </result>
+        </action>
+        <action name="*SysHelp" class="sysHelpAction" method="{1}SysHelp">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+        </action>
+        
+        <!-- 系统图片管理  -->
+        <action name="upload" class="sysImageAction" method="upload" >
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">success, msg, sysImage, uploadFileName</param>	
+            </result>
+		</action>
+		<action name="querySysImagePage" class="sysImageAction" method="querySysImagePage" >
+			<result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">imageList.*,success, msg</param>	
+            </result>
+		</action>
+		<action name="deleteSysImage" class="sysImageAction" method="deleteSysImage" >
+			<result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">success, msg</param>	
+            </result>
+		</action>
+		
+		<!-- 系统代理 -->
+    	<action name="initSysAgent">
+            <result>/mgr/system/agentManage.jsp</result>
+        </action>
+        <action name="*SysAgent*" class="sysAgentAction" method="{1}SysAgent{2}">
+            <result type="json">
+            	<param name="ignoreHierarchy">false</param> 
+            	<param name="includeProperties">agentList.*, success, msg</param>	
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>

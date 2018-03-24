@@ -173,7 +173,7 @@ public class WeatherUtils {
 				if(city.indexOf("市") > 0)
 					city = city.replace("市", "");
 			}
-			String link = "http://php.weather.sina.com.cn/xml.php?city=" + URLEncoder.encode(city, "GBK") + "&password=DJOYnieT8234jlsK&day=0";
+			String link = "http://php.weather.sina.com.cn/xml.php?city=" + URLEncoder.encode(city, "UTF-8") + "&password=DJOYnieT8234jlsK&day=0";
 			URL url = new URL(link);
 			WeatherUtils parser = new WeatherUtils(url);
 			String[] nodes = { "city", "status1", "temperature1", "status2", "temperature2" };

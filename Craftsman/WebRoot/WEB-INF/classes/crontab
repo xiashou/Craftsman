@@ -1,0 +1,28 @@
+#Minutes(0-59) Hours(0-23) Day-of-Month(1-31) Month(1-12/JAN-DEC) Day-of-Week(0-6/SUN-SAT)
+	#测试脚本
+#2 8 * * * com.fan.test.Test#run Hello
+
+
+#定时初始化component_params
+#*/2 * * * * com.tcode.common.jcrontab.job.wechat.WechatParamsJob
+
+#初始化客户回访
+#00 01 * * * com.tcode.common.jcrontab.job.visit.MemberVisitInitJob
+
+#初始化通知类短信
+#00 08 * * * com.tcode.common.jcrontab.job.msg.MsgNotifyInitJob
+
+#发送通知类短信
+#00 09 * * * com.tcode.common.jcrontab.job.msg.MsgNotifySendJob
+
+#初始化生日提醒短信
+#00 10 * * * com.tcode.common.jcrontab.job.msg.MsgNotifyBirthdayInitJob
+
+#发送生日提醒短信
+#00 11 * * * com.tcode.common.jcrontab.job.msg.MsgNotifyBirthdaySendJob
+
+#初始通知类微信模板消息
+#*/10 * * * * com.tcode.common.jcrontab.job.wechat.WechatNotifyInitJob
+
+#发送通知类微信模板消息
+#00 10 * * * com.tcode.common.jcrontab.job.wechat.WechatNotifySendJob
