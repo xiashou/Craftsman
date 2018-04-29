@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import net.sf.json.JSONObject;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.weixin4j.Configuration;
 import org.weixin4j.Menu;
@@ -26,6 +27,8 @@ import com.tcode.core.util.Utils;
 
 @Component
 public class WechatAuthorizerParamsUtil {
+	
+	private static Logger log = Logger.getLogger("SLog");
 	
 	private static WechatAuthorizerParamsService wechatAuthorizerParamsService;
 	
@@ -86,7 +89,8 @@ public class WechatAuthorizerParamsUtil {
 					Object errcode = jsonObj.get("errcode");
 					if (errcode != null) {
 						// 返回异常信息
-						throw new WeixinException("|" + authorizerAppId + "|" + errcode.toString());
+						log.error(authorizerAppId + "|" + errcode.toString());
+						throw new WeixinException(authorizerAppId + "|" + errcode.toString());
 					}
 					Object obj = jsonObj.get("authorizer_access_token");
 					
