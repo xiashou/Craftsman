@@ -1435,7 +1435,7 @@ Ext.onReady(function() {
 	
 	function getParams(){
 		return {
-			'member.memId': MemberCombo.getValue(),
+			'member.memId': Ext.isNumber(MemberCombo.getValue())?MemberCombo.getValue():'',
 			'member.name': Ext.getCmp("s_name").getValue(),
 			'member.grade': gradeCombo.getValue(),
 			'member.sales': salesCombo2.getValue(),
