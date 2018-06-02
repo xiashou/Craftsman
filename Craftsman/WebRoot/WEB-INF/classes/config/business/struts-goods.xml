@@ -101,6 +101,12 @@
         <action name="InStockPrint" class="goodsInStockAction" method="InStockPrint">
             <result name="success">/mgr/common/print/inStockPrint.jsp</result>
         </action>
+        <action name="initOutStockPrint">
+            <result name="success">/mgr/business/goods/initOutStockPrint.jsp</result>
+        </action>
+        <action name="OutStockPrint" class="goodsInStockAction" method="OutStockPrint">
+            <result name="success">/mgr/common/print/outStockPrint.jsp</result>
+        </action>
         <action name="*GoodsInStock*" class="goodsInStockAction" method="{1}GoodsInStock{2}">
             <result type="json">
             	<param name="ignoreHierarchy">false</param>

@@ -347,3 +347,12 @@ global.openInStockPrintTab = function(inNumber) {
 	global.openTab("1000004", "入库打印", "/goods/initInStockPrint.atc?inNumber=" + inNumber.trim(), null);
 };
 
+//打开退货记录打印选项卡
+global.openOutStockPrintTab = function(jsonStr) {
+	//如果存在之前打印的选项卡则先关闭
+	if(mainTab.getComponent('1000005'))
+		global.closeTab(mainTab.getComponent('1000005'));
+	//打开打印选项卡然后关闭录单选项卡
+	global.openTab("1000005", "退货打印", "/goods/initOutStockPrint.atc?jsonStr=" + jsonStr, null);
+};
+

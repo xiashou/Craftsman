@@ -306,6 +306,37 @@ public class GoodsInStockAction extends BaseAction {
 		return SUCCESS;
 	}
 	
+	/**
+	 * 打印退货单
+	 * @return
+	 */
+	public String OutStockPrint() {
+		try {
+			if(!Utils.isEmpty(jsonStr)){
+				JSONArray array = JSONArray.fromObject(jsonStr);
+				this.inStockList = new ArrayList<GoodsInStock>();
+				GoodsInStock inStock = null;
+				inNumber = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+				for (Object object : array) {
+					JSONObject json = (JSONObject) object;
+					inStock = (GoodsInStock) JSONObject.toBean(json, GoodsInStock.class);
+					if(!Utils.isEmpty(inStock)){
+						if(!Utils.isEmpty(inStock.getSupplier())){
+							Supplier supplier = supplierService.getById(inStock.getSupplier());
+							inStock.setSupplierName(supplier.getName());
+						}
+						inStock.setCreateTime(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
+						this.inStockList.add(inStock);
+					}
+				}
+				setting = settingService.getById(this.getDept().getDeptCode());
+			}
+		} catch(Exception e) {
+			log.error(Utils.getErrorMessage(e));
+		}
+		return SUCCESS;
+	}
+	
 	public String formatDouble(double s){
     	DecimalFormat fmt = new DecimalFormat("##0.00");
     	return fmt.format(s);

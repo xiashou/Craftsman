@@ -201,8 +201,26 @@ Ext.onReady(function() {
         						Ext.MessageBox.hide();
         						var result = Ext.decode(resp.responseText);
         						if(result.success){
-        							Ext.example.msg('提示', result.msg);
-        							stockStore.reload();
+        							//Ext.example.msg('提示', result.msg);
+        							Ext.MessageBox.show({
+        					            title: '结果',
+        					            msg: result.msg  + "",
+        					            buttons: Ext.MessageBox.YESNO,
+        					            closable: false,
+        					            buttonText:{
+        					                yes: "打印退货单", 
+        					                no: "继续操作" 
+        					            },
+        					            fn: function(btn) {
+        					            	if(btn == 'yes'){
+        					            		stockStore.reload();
+        					            		//打印订单
+        					            		parent.global.openOutStockPrintTab(Ext.encode(jsonArray));
+        					        		} else if(btn == 'no'){
+        					        			stockStore.reload();
+        					        		}
+        					            }
+        					        });
         						} else 
         							Ext.MessageBox.show({
         					           title: '提示',
