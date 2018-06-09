@@ -97,7 +97,7 @@
             <tr>
                 <td>
                     <div contenteditable="true">
-                        <b>车主姓名：</b><s:property value="member.name" escape="false" /><s:if test='member.sex==1'>先生</s:if><s:elseif test='member.sex==2'>女士</s:elseif></div>
+                        <b>车主姓名：</b><s:property value="member.name" escape="false" /></div>
                 </td>
                 <td>
                     <div contenteditable="true">

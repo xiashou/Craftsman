@@ -2160,6 +2160,7 @@ Ext.onReady(function() {
 					labelWidth: 60,
 					format:'0.00',
 					value: '0.00',
+					hidden: true,
 					anchor : '100%',
 					listeners: {
 	                	change: function(field, newValue, oldValue){

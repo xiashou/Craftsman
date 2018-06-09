@@ -3041,6 +3041,7 @@ Ext.onReady(function() {
 				labelStyle : 'font-size: 16px;',
 				fieldStyle : 'font-size: 16px; color:red; border: 0;',
 				readOnly: true,
+				hidden: true,
 				value: '0.00'
 			}]
 		},{

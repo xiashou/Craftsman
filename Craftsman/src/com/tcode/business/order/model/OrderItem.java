@@ -35,6 +35,7 @@ public class OrderItem {
 	private String middleman;
 	private Integer isDeduction;
 	private String source;
+	private String endDate;
 	
 	private String deptCode;
 	private Integer orderType;
@@ -51,7 +52,6 @@ public class OrderItem {
 	private String performerName;
 	private String sellerName;
 	private String startDate;
-	private String endDate;
 	private Double oprice;
 	private Double aprice;
 	private String typeName;
@@ -155,6 +155,13 @@ public class OrderItem {
 	}
 	public void setIsDeduction(Integer isDeduction) {
 		this.isDeduction = isDeduction;
+	}
+	@Column(name = "end_date")
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
 	}
 	public String getSource() {
 		return source;
@@ -280,13 +287,6 @@ public class OrderItem {
 	}
 	public void setStartDate(String startDate) {
 		this.startDate = startDate;
-	}
-	@Transient
-	public String getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
 	}
 	@Transient
 	public String getMobile() {

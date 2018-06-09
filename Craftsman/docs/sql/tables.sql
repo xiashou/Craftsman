@@ -901,7 +901,8 @@ CREATE TABLE [dbo].[order_item](
 	[seller]	[varchar](255),							--销售方
 	[middleman]	[varchar](255),							--间接销售方
 	[is_deduction] [int],								--是否为扣次项0\1\2
-	[source] [varchar](255)								--扣次来源
+	[source] [varchar](255),							--扣次来源
+	[end_date] [varchar](20)							--扣次项到期日期
 )
 GO
 
